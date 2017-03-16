@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/css/index.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="screen">
+        <span id="fps">0 FPS</span>
+    </div>
+
+    <div id="paused">
+        <div>
+            <span>Paused</span>
+            ESC to resume
+            <ul id="settings">
+                <li><label><input class="setting-sound" type="checkbox" checked /> Ambient Sound</label></li>
+                <li><label><input class="setting-sound" type="checkbox" checked /> Game Sound</label></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!--<div id="loading">
+        <div id="loading-inner">
+            Loading...
+            <progress id="loading-progress" value="0" max="100" />
+        </div>
+    </div>-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.2.2/pixi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.js"></script>
+    <!--<script src="js/lib/dust.js"></script>
+    <script src="js/lib/sound.js"></script>
+    <script src="js/lib/smoothie.js"></script>-->
+
+    <script src="js/lib/dust.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>

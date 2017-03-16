@@ -1,0 +1,136 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+body,
+html {
+  font-family: Roboto;
+  padding: 0;
+  margin: 0;
+}
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  vertical-align: middle;
+  text-align: center;
+  background-color: black;
+  transition-property: opacity, visibility;
+  transition-delay: 1s, 2s;
+  transition-duration: 1s, 0s;
+}
+#loading #loading-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  font-family: Roboto;
+}
+#loading #loading-inner progress[value] {
+  height: 2px;
+  margin: 10px;
+  width: 250px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  appearance: none;
+  color: white;
+}
+#loading #loading-inner progress[value]::-webkit-progress-bar {
+  background-color: #111;
+  border-radius: 1px;
+}
+#loading #loading-inner progress[value]::-moz-progress-bar {
+  background-color: #fff;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+#loading #loading-inner progress[value]::-webkit-progress-value {
+  background-color: #fff;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+#paused {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  vertical-align: middle;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#paused > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  font-family: Roboto;
+}
+#paused > div span {
+  font-size: 12em;
+  font-weight: bold;
+  display: block;
+}
+#paused > div #settings {
+  list-style: none;
+  margin: 0;
+  margin-top: 3em;
+  padding: 0;
+}
+#paused > div #settings li {
+  margin: 0;
+  padding: 0;
+}
+#paused > div #settings li input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+#paused > div #settings li input[type=checkbox]::after {
+  display: block;
+  content: " ";
+  width: 1em;
+  height: 1em;
+  border: 2pt solid white;
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.25s;
+  box-sizing: border-box;
+}
+#paused > div #settings li input[type=checkbox]:checked::after {
+  background-color: white;
+}
+#screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: none;
+  color: white;
+}
+#screen #fps {
+  margin: 10px;
+  background-color: black;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+#screen * {
+  max-width: 100%;
+  max-height: 100%;
+}
