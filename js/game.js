@@ -40,7 +40,7 @@ var vector = {
     }
 };
 
-var keyboard = function keyboard(keyCode)  {
+var keyboard = function keyboard(keyCode) {
     var key = {};
     key.code = keyCode;
     key.isDown = false;
@@ -267,7 +267,7 @@ class Game {
 
         this.dust.update();
         this.stages[this.stage].update(time, dtime);
-        
+
 
         this.time.last = time;
     }
@@ -308,8 +308,7 @@ class Game {
             this._sessionScore = value;
         }
 
-        if(value > this.highScore)
-        {
+        if (value > this.highScore) {
             this.highScore = value;
             localStorage.setItem("highscore", this.highScore);
             this.newHigh = true;
@@ -366,33 +365,33 @@ class SplashScreen extends Screen {
 
     load() {
         this.game.sound
-            .add("blackhole", "/sound/blackhole")
-            .add("checkpoint", "/sound/checkpoint")
-            .add("pop", "/sound/pop")
-            .add("scream", "/sound/scream")
-            .add("stone1", "/sound/stone1")
-            .add("stone2", "/sound/stone2")
-            .add("stone3", "/sound/stone3")
-            .add("stone4", "/sound/stone4")
-            .add("swish", "/sound/swish")
-            .add("touch", "/sound/touch")
-            .add("wind", "/sound/wind");
+            .add("blackhole", "./sound/blackhole")
+            .add("checkpoint", "./sound/checkpoint")
+            .add("pop", "./sound/pop")
+            .add("scream", "./sound/scream")
+            .add("stone1", "./sound/stone1")
+            .add("stone2", "./sound/stone2")
+            .add("stone3", "./sound/stone3")
+            .add("stone4", "./sound/stone4")
+            .add("swish", "./sound/swish")
+            .add("touch", "./sound/touch")
+            .add("wind", "./sound/wind");
 
         PIXI.loader
-            .add("glow", "/img/sprite/glowie.png")
-            .add("light", "/img/sprite/glowie-light.png")
-            .add("wall", "/img/sprite/wall.png")
-            .add("eye", "/img/sprite/eye.png")
-            .add("empty-eye", "/img/sprite/blackeye.png")
-            .add("pupil", "/img/sprite/pupil.png")
-            .add("mouth", "/img/sprite/mouth.png")
-            .add("teleportex", "/img/sprite/teleportex.png")
-            .add("blackhole", "/img/sprite/blackhole.png")
-            .add("logo", "/img/sprite/logo.png")
-            .add("checkpoint", "/img/sprite/checkpoint.png")
-            .add("checkpoint-active", "/img/sprite/checkpoint-active.png")
-            .add("radiation", "/img/sprite/radiation.png")
-            .add("minimaze", "/img/sprite/minimaze.png")
+            .add("glow", "./img/sprite/glowie.png")
+            .add("light", "./img/sprite/glowie-light.png")
+            .add("wall", "./img/sprite/wall.png")
+            .add("eye", "./img/sprite/eye.png")
+            .add("empty-eye", "./img/sprite/blackeye.png")
+            .add("pupil", "./img/sprite/pupil.png")
+            .add("mouth", "./img/sprite/mouth.png")
+            .add("teleportex", "./img/sprite/teleportex.png")
+            .add("blackhole", "./img/sprite/blackhole.png")
+            .add("logo", "./img/sprite/logo.png")
+            .add("checkpoint", "./img/sprite/checkpoint.png")
+            .add("checkpoint-active", "./img/sprite/checkpoint-active.png")
+            .add("radiation", "./img/sprite/radiation.png")
+            .add("minimaze", "./img/sprite/minimaze.png")
             .load(this.init.bind(this));
     }
 
@@ -433,7 +432,7 @@ class SplashScreen extends Screen {
                 this.exit();
             }
         }
-        
+
         this.maze.update(time, dtime);
         this.maze.group.rotation += -0.5 * dtime;
 
@@ -485,7 +484,7 @@ class MazeScreen extends Screen {
         });
         this.scoreText.anchor.set(1, 0);
         this.scoreboard.addChild(this.scoreText);
-        
+
         this.highScoreText = new PIXI.Text(`high score: ${this.game.highScore}`, {
             fill: "white", fontFamily: "Roboto", fontStyle: "bold", fontSize: "24pt", align: "right",
             strokeThickness: "5"
